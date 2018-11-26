@@ -1,0 +1,24 @@
+
+/dts-v1/;
+#include "sun8i-h3-nanopi-duo2.dtsi"
+
+/ {
+        model = "FriendlyARM NanoPi Duo2-IoTBox";
+        compatible = "friendly-arm,nanopi-duo2-iotbox", "allwinner,sun8i-h3";
+};
+
+
+&emac {
+        phy-handle = <&int_mii_phy>;
+        phy-mode = "mii";
+        allwinner,leds-active-low;
+        status = "okay";
+};
+
+&ehci0 {
+        status = "okay";
+};
+
+&ohci0 {
+        status = "okay";
+};

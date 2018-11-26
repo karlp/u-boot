@@ -31,9 +31,10 @@
 # define CONFIG_MACH_TYPE_COMPAT_REV	1
 #endif
 
+#define CONFIG_SYS_BOOTM_LEN		(32 << 20)
+
 #ifdef CONFIG_ARM64
 #define CONFIG_BUILD_TARGET "u-boot.itb"
-#define CONFIG_SYS_BOOTM_LEN		(32 << 20)
 #endif
 
 /* Serial & console */
