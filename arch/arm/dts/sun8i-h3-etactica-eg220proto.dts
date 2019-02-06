@@ -43,11 +43,12 @@
 #include "sun8i-h3-nanopi-duo2.dts"
 
 / {
-	model = "FriendlyARM NanoPi Duo2 IoT Box";
-	compatible = "friendlyarm,nanopi-duo2-iotbox", "friendlyarm,nanopi-duo2",
+	model = "eTactica EG220 prototype";
+	compatible = "etactica,eg220proto", "friendlyarm,nanopi-duo2",
 		"allwinner,sun8i-h3";
 };
 
+/* None of the usb is actually broken out on this one... 
 &ehci2 {
 	status = "okay";
 };
@@ -63,6 +64,7 @@
 &ohci3 {
 	status = "okay";
 };
+*/
 
 &emac {
 	phy-handle = <&int_mii_phy>;
@@ -71,12 +73,12 @@
 	status = "okay";
 };
 
-/* Not addressed, SIM800C module on uart3 */
+/* RS485 transceiver on uart3 */
 &uart3 {
 	pinctrl-names = "default";
+	/* actually only using the RTS pin, but this will do */
 	pinctrl-0 = <&uart3_pins>, <&uart3_rts_cts_pins>;
 	uart-has-rtscts;
 	status = "okay";
-	/* Not addressed, g11 is pwr-key for sim800c module */
 };
 
