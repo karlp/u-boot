@@ -46,6 +46,10 @@
 	model = "eTactica EG220 prototype";
 	compatible = "etactica,eg220proto", "friendlyarm,nanopi-duo2",
 		"allwinner,sun8i-h3";
+
+	aliases {
+		ethernet0 = &emac;
+	}
 };
 
 /* None of the usb is actually broken out on this one... 

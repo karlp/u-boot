@@ -46,6 +46,9 @@
 	model = "FriendlyARM NanoPi Duo2 IoT Box";
 	compatible = "friendlyarm,nanopi-duo2-iotbox", "friendlyarm,nanopi-duo2",
 		"allwinner,sun8i-h3";
+	aliases {
+		ethernet0 = &emac;
+	}
 };
 
 &ehci2 {
